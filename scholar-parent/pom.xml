@@ -14,6 +14,7 @@
 		<commons-dbcp2.version>2.2.0</commons-dbcp2.version>
 		<freemarker.version>2.3.28</freemarker.version>
 		<servlet-api.version>4.0.1</servlet-api.version>
+		<shiro-core.version>1.4.0</shiro-core.version>
 
 		<slf4j-api.version>1.7.25</slf4j-api.version>
 		<log4j-core.version>2.11.0</log4j-core.version>
@@ -83,7 +84,7 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!-- spring end -->
-			
+
 			<!-- mybatis start -->
 			<dependency>
 				<groupId>org.mybatis</groupId>
@@ -91,7 +92,7 @@
 				<version>${mybatis.version}</version>
 			</dependency>
 			<!-- mybatis end -->
-			
+
 			<!-- mysql start -->
 			<dependency>
 				<groupId>mysql</groupId>
@@ -111,16 +112,16 @@
 			<!-- servlet api start -->
 			<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
 			<dependency>
-			    <groupId>org.freemarker</groupId>
-			    <artifactId>freemarker</artifactId>
-			    <version>${freemarker.version}</version>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${freemarker.version}</version>
 			</dependency>
 			<!-- commons-dbcp2 end -->
 
 			<!-- servlet api start -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
+				<artifactId>javax.servlet-api</artifactId>
 				<version>${servlet-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
@@ -134,7 +135,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
+				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${slf4j-api.version}</version>
 			</dependency>
 			<!-- slf4j end -->
@@ -145,7 +146,30 @@
 				<artifactId>log4j-core</artifactId>
 				<version>${log4j-core.version}</version>
 			</dependency>
-			<!-- log4j-corei end -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j-core.version}</version>
+			</dependency>
+			<!--用于与slf4j保持桥接 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j-core.version}</version>
+			</dependency>
+			<!--web工程需要包含log4j-web，非web工程不需要 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-web</artifactId>
+				<version>${log4j-core.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<!-- log4j-core end -->
 
 			<!-- jackson start -->
 			<dependency>
@@ -211,6 +235,17 @@
 			<!-- apache commons end -->
 
 
+			<!-- shiro -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro-core.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -283,7 +318,7 @@
 					<target>${jdk.version}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<compilerArguments>
-						<verbose />
+						<!-- <verbose /> -->
 						<!-- bootclasspath>${java.home}/jre/lib/rt.jar</bootclasspath -->
 					</compilerArguments>
 				</configuration>

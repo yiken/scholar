@@ -24,10 +24,15 @@
 
 	<!-- 启动注解配置 -->
 	<mvc:annotation-driven/>
+	<context:component-scan base-package="com.scholar" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.web.method.ControllerAdviceBean"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 	
 	<!-- 静态资源映射 -->
 	<mvc:resources location="classpath:" mapping="/classpath:*/**" />
 	<mvc:resources location="/static" mapping="/static/**" />
+	<mvc:resources location="/" mapping="/**" />
 	
 	<!-- freemarker视图解析器 -->
     <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
