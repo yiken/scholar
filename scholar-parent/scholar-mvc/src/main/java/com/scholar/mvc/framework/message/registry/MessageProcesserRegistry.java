@@ -1,6 +1,7 @@
 package com.scholar.mvc.framework.message.registry;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class MessageProcesserRegistry {
         }
         Collection<MessageProcesser> values = processers.values();
         messageProcessers = new LinkedList<>(values);
+        Collections.sort(messageProcessers);//重排序
     }
 
     /**

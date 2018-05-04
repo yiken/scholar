@@ -24,7 +24,7 @@
 
 	<!-- 启动注解配置 -->
 	<mvc:annotation-driven/>
-	<context:component-scan base-package="com.scholar" use-default-filters="false">
+	<context:component-scan base-package="com.scholar" use-default-filters="false" name-generator="com.scholar.mvc.framework.bean.ProjectBeanNameGenerator">
 		<context:include-filter type="annotation" expression="org.springframework.web.method.ControllerAdviceBean"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>

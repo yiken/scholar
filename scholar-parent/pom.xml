@@ -21,6 +21,7 @@
 
 		<jackson.version>2.9.5</jackson.version>
 		<json-lib.version>2.4</json-lib.version>
+		<ezmorph.version>1.0.6</ezmorph.version>
 		<json.version>20180130</json.version>
 
 		<commons-io.version>2.6</commons-io.version>
@@ -189,6 +190,11 @@
 				<groupId>net.sf.json-lib</groupId>
 				<artifactId>json-lib</artifactId>
 				<version>${json-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.ezmorph</groupId>
+				<artifactId>ezmorph</artifactId>
+				<version>${ezmorph.version}</version>
 			</dependency>
 			<!-- json-lib end -->
 

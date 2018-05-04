@@ -8,10 +8,10 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
 /** 
- *
+ * 参数信息
  * @author yilean
  * @date 2018年4月27日 上午11:48:14  
-*/
+ */
 public class ParameterInfo {
 
     private String parameterName;

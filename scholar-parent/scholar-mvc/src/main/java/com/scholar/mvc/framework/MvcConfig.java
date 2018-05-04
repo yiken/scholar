@@ -12,5 +12,7 @@ excludeFilters = {@ComponentScan.Filter(
         type = FilterType.ANNOTATION, 
         classes = { Controller.class, ControllerAdvice.class }) })
 public class MvcConfig {
-
+    public final static String NAME = "mvc";
+    public final static String PREFIX = NAME + ".";
+    
 }

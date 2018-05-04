@@ -5,6 +5,7 @@
 package com.scholar.mvc.framework.parameter.registry;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class ParameterResolverRegistry {
         }
         Collection<ParameterResolver> values = resolvers.values();
         parameterResolvers = new LinkedList<>(values);
+        Collections.sort(parameterResolvers);
     }
     
     /**
@@ -45,9 +47,10 @@ public class ParameterResolverRegistry {
      * @param parameterInfo
      * @return 
      * @author yilean
+     * @throws Exception 
      * @date 2018年4月27日 下午12:28:37
      */
-    public Object resolveParameter(HttpServletRequest request, ParameterInfo parameterInfo) {
+    public Object resolveParameter(HttpServletRequest request, ParameterInfo parameterInfo) throws Exception {
         for (ParameterResolver parameterResolver : parameterResolvers) {
             if (parameterResolver.support(parameterInfo)) {
                 return parameterResolver.resolve(request, parameterInfo);
