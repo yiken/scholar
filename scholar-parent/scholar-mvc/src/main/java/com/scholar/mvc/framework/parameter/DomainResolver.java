@@ -40,12 +40,12 @@ public class DomainResolver implements ParameterResolver {
         if (null != genericTypes && genericTypes.length != 0) {
             Class<?> type = (Class<?>) genericTypes[0];
             JSONArray array = JSONArray.fromObject(jsonStr);
-            if (parameterType == List.class) {
+            if (List.class.isAssignableFrom(parameterType)) {
                 return new ArrayList<Object>(JSONArray.toCollection(array, type));
-            } else if (parameterType == Set.class) {
-                return new HashSet<>(array);
+            } else if (Set.class.isAssignableFrom(parameterType)) {
+                return new HashSet<>(JSONArray.toCollection(array, type));
             } else if (parameterType.isArray()) {
-                return new ArrayList<Object>(JSONArray.toCollection(array, type)).toArray();
+                return JSONArray.toArray(array, type);
             }
         }
         return JSONObject.toBean(JSONObject.fromObject(jsonStr), parameterType);

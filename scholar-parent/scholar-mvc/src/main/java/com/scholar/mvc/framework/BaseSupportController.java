@@ -2,7 +2,6 @@ package com.scholar.mvc.framework;
 
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,6 +40,17 @@ public class BaseSupportController {
         return resolveRequest(request, response, handler, method, null);
     }
 
+    /**
+     * 请求处理
+     * @param request
+     * @param response
+     * @param handler
+     * @param method
+     * @param keyValue
+     * @return     
+     * @author yilen
+     * @date 2018年5月24日 下午6:00:34
+     */
     @RequestMapping("/{handler}/{method}/{keyValue}")
     public Object resolveRequest(HttpServletRequest request, HttpServletResponse response, @PathVariable String handler, @PathVariable String method, String keyValue) {
         // 返回結果
@@ -49,8 +59,8 @@ public class BaseSupportController {
             HandlerInfo handlerInfo = this.mapping.getHandlerInfo(handler);
             MethodInfo methodInfo = handlerInfo.getMethodInfos().get(method);
             
-            HttpRequestParameter httpRequestParameter = new HttpRequestParameter();
-            Map<String, String[]> parameterMap = request.getParameterMap();
+            //封裝请求参数
+            HttpRequestParameter httpRequestParameter = new HttpRequestParameter(request.getParameterMap(),response,request,keyValue);
 
             Object handlerBean = handlerInfo.getHandler();
             Method handlerMethod = methodInfo.getMethod();
@@ -66,7 +76,7 @@ public class BaseSupportController {
                 List<ParameterInfo> parameterInfos = methodInfo.getParameterInfos();
                 int index = 0;
                 for (ParameterInfo parameterInfo : parameterInfos) {
-                    
+                    parameterInfo.setHttpRequestParameter(httpRequestParameter);
                     Object parameter = this.resolverRegistry.resolveParameter(request, parameterInfo);
                     parameters[index] = parameter;
                     index ++;

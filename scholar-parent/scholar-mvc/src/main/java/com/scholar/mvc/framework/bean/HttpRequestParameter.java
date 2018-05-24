@@ -1,7 +1,6 @@
 package com.scholar.mvc.framework.bean;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -92,5 +91,40 @@ public class HttpRequestParameter {
     /** @return the serviceId */
     public String getServiceId() {
         return serviceId;
+    }
+
+    /** @return the parameterMap */
+    public Map<String, String[]> getParameterMap() {
+        return parameterMap;
+    }
+
+    /** @return the response */
+    public HttpServletResponse getResponse() {
+        return response;
+    }
+
+    /** @return the request */
+    public HttpServletRequest getRequest() {
+        return request;
+    }
+
+    /** @param parameterMap the parameterMap to set */
+    public void setParameterMap(Map<String, String[]> parameterMap) {
+        this.parameterMap = parameterMap;
+    }
+
+    /** @param response the response to set */
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
+    }
+
+    /** @param request the request to set */
+    public void setRequest(HttpServletRequest request) {
+        this.request = request;
+    }
+
+    /** @param serviceId the serviceId to set */
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 }
