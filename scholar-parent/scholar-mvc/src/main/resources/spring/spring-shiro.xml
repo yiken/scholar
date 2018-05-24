@@ -32,8 +32,8 @@
 		<property name="filterChainDefinitions">
 			<value>
 				/static/** = none
-				/share = authc
 				/logout = logout
+				/** = authc
 			</value>
 		</property>
 

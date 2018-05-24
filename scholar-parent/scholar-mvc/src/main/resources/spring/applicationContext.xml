@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:c="http://www.springframework.org/schema/c"
-	xmlns:cache="http://www.springframework.org/schema/cache"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
-		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	
-	<!-- 配置freeMarker的模板路径 -->
-    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/"/>
-        <property name="freemarkerVariables">
-            <map>
-                <entry key="xml_escape" value-ref="fmXmlEscape"/>
-            </map>
-        </property>
-        <property name="defaultEncoding" value="UTF-8"/>
-        <property name="freemarkerSettings">
-            <props>
-                <prop key="template_update_delay">0</prop>
-                <prop key="locale">zh_CN</prop>
-                <prop key="datetime_format">yyyy-MM-ddHH:mm:ss</prop>
-                <prop key="date_format">yyyy-MM-dd</prop>
-                <prop key="time_format">HH:mm:ss</prop>
-                <prop key="number_format">#.##</prop>
-                <prop key="boolean_format">true,false</prop>
-                <prop key="whitespace_stripping">true</prop>
-                <prop key="tag_syntax">auto_detect</prop>
-                <prop key="url_escaping_charset">UTF-8</prop>
-                <prop key="auto_import">spring.ftl as s</prop>
-            </props>
-        </property>
-    </bean>
 
-    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+	<!-- 开启Annotation注解支持 -->
+	<context:annotation-config />
+	
+	
+	<!-- Bean named 'sys.ModuleService' must be of type [com.scholar.utility.sysadmin.service.ModuleService], 
+		but was actually of type [com.sun.proxy.$Proxy39] -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<!-- 配置freeMarker的模板路径 -->
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="${freemarker.templateLoaderPath}" />
+		<!-- 关键！ -->
+		<property name="preTemplateLoaders">
+			<list>
+				<bean class="com.scholar.mvc.freemarker.template.StringProtocolFreeMarkerTemplateLoader"></bean>
+				<bean class="com.scholar.mvc.freemarker.template.ClasspathProtocolFreeMarkerTemplateLoader">
+					<property name="cache" value="${freemarker.cacheTemplate}"/>
+				</bean>
+			</list>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">${freemarker.template_update_delay}</prop>
+				<prop key="locale">${freemarker.locale}</prop>
+				<prop key="datetime_format">${freemarker.datetime_format}</prop>
+				<prop key="date_format">${freemarker.date_format}</prop>
+				<prop key="number_format">${freemarker.number_format}</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
 </beans>

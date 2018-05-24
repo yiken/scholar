@@ -30,6 +30,8 @@
 		<commons-lang3.version>3.7</commons-lang3.version>
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<commons-pool.version>2.5.0</commons-pool.version>
+		<cglib.version>3.2.6</cglib.version>
+		<persistence-api.version>1.0.2</persistence-api.version>
 
 
 		<jdk.version>1.8</jdk.version>
@@ -239,6 +241,17 @@
 				<version>${commons-pool.version}</version>
 			</dependency>
 			<!-- apache commons end -->
+
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${persistence-api.version}</version>
+			</dependency>
 
 
 			<!-- shiro -->
