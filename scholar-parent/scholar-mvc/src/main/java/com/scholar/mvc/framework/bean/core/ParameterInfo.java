@@ -7,6 +7,8 @@ package com.scholar.mvc.framework.bean.core;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
+import com.scholar.mvc.framework.bean.HttpRequestParameter;
+
 /** 
  * 参数信息
  * @author yilean
@@ -18,6 +20,8 @@ public class ParameterInfo {
     private Class<?> type;
     private Annotation[] annotations;
     private Type[] genericTypes;
+    
+    private HttpRequestParameter httpRequestParameter;
     
     
     /** @return the parameterName */
@@ -51,5 +55,13 @@ public class ParameterInfo {
     /** @param genericTypes the genericTypes to set */
     public void setGenericTypes(Type[] genericTypes) {
         this.genericTypes = genericTypes;
+    }
+    /** @return the httpRequestParameter */
+    public HttpRequestParameter getHttpRequestParameter() {
+        return httpRequestParameter;
+    }
+    /** @param httpRequestParameter the httpRequestParameter to set */
+    public void setHttpRequestParameter(HttpRequestParameter httpRequestParameter) {
+        this.httpRequestParameter = httpRequestParameter;
     }
 }

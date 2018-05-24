@@ -95,6 +95,7 @@ public class HandlerMethodMapping {
                 methodInfo.setMethod(method);
                 methodInfo.setMethodName(methodName);
                 methodInfo.setParameterCount(parameterCount);
+                methodInfo.setMessageType(actionMethod.response());
                 if (parameterCount > 0) {
                     methodInfo.setParameterInfos(initParameterInfos(method));
                 }
@@ -137,4 +138,9 @@ public class HandlerMethodMapping {
         }
         return parameterInfos;
     }
+    
+    public HandlerInfo getHandlerInfo(String handler) {
+        return this.mapping.get(handler);
+    }
+    
 }

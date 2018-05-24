@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
 
 import org.springframework.core.annotation.AliasFor;
 
+import com.scholar.mvc.framework.message.enumaration.MessageType;
+
 @Documented
 @Retention(RUNTIME)
 @Target(METHOD)
@@ -20,5 +22,5 @@ public @interface ActionMethod {
     @AliasFor(value = "name")
     String value() default "";
 
-    String response();
+    MessageType response();
 }

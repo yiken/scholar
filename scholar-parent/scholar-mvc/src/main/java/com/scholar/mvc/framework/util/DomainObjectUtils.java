@@ -13,7 +13,7 @@ import com.scholar.mvc.framework.bean.ProjectBeanNameGenerator;
 /**
  * domain对象工具
  * 
- * @author yiealen
+ * @author yilen
  *
  */
 public abstract class DomainObjectUtils {

@@ -1,23 +1,22 @@
-/**   
- * @title MethodInfo.java 
- * @package com.scholar.mvc.framework.bean 
- */
 package com.scholar.mvc.framework.bean.core;
 
 import java.lang.reflect.Method;
 import java.util.List;
 
-/** 
+import com.scholar.mvc.framework.message.enumaration.MessageType;
+
+/**
  *
- * @author yilean
- * @date 2018年4月27日 上午11:47:16  
-*/
+ * @author yilen
+ * @date 2018年4月27日 上午11:47:16
+ */
 
 public class MethodInfo {
 
-    private String methodName;
-    private int parameterCount;
-    private Method method;
+    private String              methodName;
+    private int                 parameterCount;
+    private MessageType         messageType;
+    private Method              method;
     private List<ParameterInfo> parameterInfos;
     
     
@@ -52,5 +51,13 @@ public class MethodInfo {
     /** @param parameterInfos the parameterInfos to set */
     public void setParameterInfos(List<ParameterInfo> parameterInfos) {
         this.parameterInfos = parameterInfos;
+    }
+    /** @return the messageType */
+    public MessageType getMessageType() {
+        return messageType;
+    }
+    /** @param messageType the messageType to set */
+    public void setMessageType(MessageType messageType) {
+        this.messageType = messageType;
     }
 }
