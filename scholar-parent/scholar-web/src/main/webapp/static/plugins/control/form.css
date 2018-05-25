@@ -1,0 +1,267 @@
+.cbr-replaced {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: -1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.cbr-replaced .cbr-input {
+  display: none;
+}
+.cbr-replaced .cbr-state {
+  position: relative;
+  display: block;
+  background: #FFF;
+  border: 1px solid #dddddd;
+  line-height: 1;
+  width: 15px;
+  height: 15px;
+}
+.cbr-replaced .cbr-state span {
+  display: block;
+  background: url(images/ok.png) no-repeat center center;
+  background-image: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+}
+.cbr-replaced.cbr-checked span {
+  background-image: url(images/ok.png);
+}
+.cbr-replaced.cbr-disabled {
+  zoom: 1;
+  filter: alpha(opacity=40);
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+.cbr-replaced.cbr-radio .cbr-state {
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+.cbr-replaced.cbr-radio .cbr-state span {
+  background: #FFF;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+.cbr-replaced.cbr-radio.cbr-checked .cbr-state span {
+  background: #dddddd;
+}
+.cbr-replaced.cbr-primary .cbr-state {
+  background: #2c2e2f;
+  border-color: #323435;
+}
+.cbr-replaced.cbr-primary.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-primary.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-primary.cbr-radio .cbr-state span {
+  background-color: #fff;
+}
+.cbr-replaced.cbr-primary.cbr-radio.cbr-checked .cbr-state span {
+  background: #2c2e2f;
+}
+.cbr-replaced.cbr-secondary .cbr-state {
+  background: #68b828;
+  border-color: #68b828;
+}
+.cbr-replaced.cbr-secondary.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-secondary.cbr-checked.cbr-radio .cbr-state span {
+  background: #68b828;
+}
+.cbr-replaced.cbr-secondary.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-success .cbr-state {
+  background: #8dc63f;
+  border-color: #8dc63f;
+}
+.cbr-replaced.cbr-success.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-success.cbr-checked.cbr-radio .cbr-state span {
+  background: #8dc63f;
+}
+.cbr-replaced.cbr-success.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-info .cbr-state {
+  background: #40bbea;
+  border-color: #40bbea;
+}
+.cbr-replaced.cbr-info.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-info.cbr-checked.cbr-radio .cbr-state span {
+  background: #40bbea;
+}
+.cbr-replaced.cbr-info.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-danger .cbr-state {
+  background: #cc3f44;
+  border-color: #cc3f44;
+}
+.cbr-replaced.cbr-danger.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-danger.cbr-checked.cbr-radio .cbr-state span {
+  background: #cc3f44;
+}
+.cbr-replaced.cbr-danger.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-warning .cbr-state {
+  background: #ffba00;
+  border-color: #ffba00;
+}
+.cbr-replaced.cbr-warning.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-warning.cbr-checked.cbr-radio .cbr-state span {
+  background: #ffba00;
+}
+.cbr-replaced.cbr-warning.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-red .cbr-state {
+  background: #d5080f;
+  border-color: #d5080f;
+}
+.cbr-replaced.cbr-red.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-red.cbr-checked.cbr-radio .cbr-state span {
+  background: #d5080f;
+}
+.cbr-replaced.cbr-red.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-blue .cbr-state {
+  background: #0e62c7;
+  border-color: #0e62c7;
+}
+.cbr-replaced.cbr-blue.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-blue.cbr-checked.cbr-radio .cbr-state span {
+  background: #0e62c7;
+}
+.cbr-replaced.cbr-blue.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-purple .cbr-state {
+  background: #7c38bc;
+  border-color: #7c38bc;
+}
+.cbr-replaced.cbr-purple.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-purple.cbr-checked.cbr-radio .cbr-state span {
+  background: #7c38bc;
+}
+.cbr-replaced.cbr-purple.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-pink .cbr-state {
+  background: #ff6264;
+  border-color: #ff6264;
+}
+.cbr-replaced.cbr-pink.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-pink.cbr-checked.cbr-radio .cbr-state span {
+  background: #ff6264;
+}
+.cbr-replaced.cbr-pink.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-orange .cbr-state {
+  background: #f7aa47;
+  border-color: #f7aa47;
+}
+.cbr-replaced.cbr-orange.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-orange.cbr-checked.cbr-radio .cbr-state span {
+  background: #f7aa47;
+}
+.cbr-replaced.cbr-orange.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-turquoise .cbr-state {
+  background: #00b19d;
+  border-color: #00b19d;
+}
+.cbr-replaced.cbr-turquoise.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-turquoise.cbr-checked.cbr-radio .cbr-state span {
+  background: #00b19d;
+}
+.cbr-replaced.cbr-turquoise.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-yellow .cbr-state {
+  background: #fcd036;
+  border-color: #fcd036;
+}
+.cbr-replaced.cbr-yellow.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-yellow.cbr-checked.cbr-radio .cbr-state span {
+  background: #fcd036;
+}
+.cbr-replaced.cbr-yellow.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-gray .cbr-state {
+  background: #c8c8c8;
+  border-color: #c8c8c8;
+}
+.cbr-replaced.cbr-gray.cbr-checked span {
+  background-image: url(images/ok-white-full.png);
+}
+.cbr-replaced.cbr-gray.cbr-checked.cbr-radio .cbr-state span {
+  background: #c8c8c8;
+}
+.cbr-replaced.cbr-gray.cbr-radio .cbr-state {
+  background: #fff;
+}
+.cbr-replaced.cbr-gray.cbr-checked span {
+  background-image: url(images/ok.png);
+}
+.cbr-replaced + label {
+  padding-left: 5px;
+}
+label .cbr-replaced {
+  margin-right: 4px;
+}
+label.cbr-inline {
+  padding-top: 7px;
+}
+label.cbr-inline + .cbr-inline {
+  margin-left: 10px;
+}

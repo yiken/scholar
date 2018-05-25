@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>表单控件</title>
+    <link rel="stylesheet" href="static/plugins/control/form.css">
+    <link rel="stylesheet" href="static/plugins/control/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="static/plugins/control/font-awesome.min.css">
+    <link rel="stylesheet" href="static/plugins/control/tree/tree.css">
+    <link rel="stylesheet" href="static/plugins/control/control-ui.css">
+</head>
+
+<body>
+    <h2>单选按钮</h2>
+    <hr>
+    <label>
+        <input type="radio" name="radio-3" data-type="danger" checked="checked" data-disabled="disabled"> Danger color
+    </label>
+    <label>
+        <input type="radio" name="radio-3" data-type="default"> default color
+    </label>
+    <label>
+        <input type="radio" name="radio-3" data-type="primary"> primary color
+    </label>
+    <hr>
+    <h2>多选按钮</h2>
+    <hr>
+    <label>
+        <input type="checkbox" name="checkbox-3" data-type="danger"> Danger color
+    </label>
+    <label>
+        <input type="checkbox" name="checkbox-3" data-type="default" checked="checked" data-disabled="disabled"> default color
+    </label>
+    <label>
+        <input type="checkbox" name="checkbox-3" data-type="primary"> primary color
+    </label>
+    <hr>
+    <h2>下拉框</h2>
+    <hr>
+    <label class="form-label" for="select2" style="display: inline-block;margin-right: 20px;">下拉框演示</label><div id="select2" style="width: 200px;display: inline-block;" class="ui-select"></div>
+    <hr>
+    <h2>下拉树</h2>
+    <hr>
+    <label class="form-label" for="select2" style="display: inline-block;margin-right: 20px;">下拉框演示</label><div id="select3" style="width: 200px;display: inline-block;" class="ui-select"></div>
+    <hr>
+</body>
+<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="static/plugins/control/form.js?v=5"></script>
+<script type="text/javascript" src="static/plugins/control/tree/tree.js"></script>
+<script type="text/javascript" src="static/plugins/control/control-ui.js"></script>
+<script type="text/javascript">
+	var contentPath = 'file:///C:/Users/Administrator/Documents/favorite';
+	$(function() {
+		$("#select2").ComboBox({
+			id: "id",
+			text: "text",
+			description: "==请选择==",
+			allowSearch: true,
+			keyword: 'parentId',
+			height: '250px',
+			showcheck: false,
+			click: function(item) {},
+			data: [{
+				id: "0",
+				text: "节点1",
+			}, {
+				id: "01",
+				text: "节点2",
+			}, {
+				id: "02",
+				text: "节点3",
+			}, {
+				id: "03",
+				text: "节点4",
+			}, {
+				id: "04",
+				text: "节点5",
+			}, {
+				id: "05",
+				text: "节点6",
+			}, ]
+		})
+		$("#select3").ComboBoxTree({
+			description: "==请选择==",
+			allowSearch: true,
+			keyword: 'parentId',
+			height: '250px',
+			showcheck: false,
+			click: function(item) {},
+			data: [{
+				id: "0",
+				text: "父节点",
+				value: "no",
+				showcheck: true,
+				hasChildren: true,
+				isexpand: true,
+				complete: true,
+				ChildNodes: [{
+					id: "1",
+					text: "子节点一",
+					value: "learuntree",
+					hasChildren: true,
+					isexpand: true,
+					complete: true,
+					ChildNodes: [{
+						id: "2",
+						text: "子节点二",
+						value: "learuntree",
+						showcheck: true,
+						complete: true
+					}, {
+						id: "3",
+						text: "子节点三",
+						value: "learuntree",
+						showcheck: true,
+						complete: true
+					}, {
+						id: "4",
+						text: "子节点四",
+						value: "learuntree",
+						showcheck: true,
+						complete: true
+					}]
+				}, {
+					id: "11",
+					text: "子节点一一",
+					value: "learuntree",
+					showcheck: true,
+					hasChildren: true,
+					isexpand: true,
+					complete: true,
+					ChildNodes: [{
+						id: "12",
+						text: "子节点一二",
+						value: "learuntree",
+						showcheck: true,
+						complete: true
+					}]
+				}]
+			}]
+		})
+	})
+</script>
+
+</html>
