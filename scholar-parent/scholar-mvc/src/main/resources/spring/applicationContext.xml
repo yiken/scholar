@@ -7,6 +7,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:globle.properties"/>
+		<property name="ignoreResourceNotFound" value="true"></property>
+	</bean>
 
 	<!-- 开启Annotation注解支持 -->
 	<context:annotation-config />
@@ -47,4 +51,6 @@
 	</bean>
 
 	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+	
+	<bean id="MvcConfig" class="com.scholar.mvc.framework.MvcConfig"/>
 </beans>

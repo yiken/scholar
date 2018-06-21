@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LogginController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/doLogin")
     public Object login(String userName, String passwd, Model model) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(userName, passwd);
@@ -32,6 +32,6 @@ public class LogginController {
             model.addAttribute("passwd", "密码错误");
             return "login";
         }
-        return "index";
+        return "redirect:index.html";
     }
 }

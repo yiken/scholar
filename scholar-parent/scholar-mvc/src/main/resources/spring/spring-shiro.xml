@@ -31,8 +31,9 @@
 		<!--URL的拦截 -->
 		<property name="filterChainDefinitions">
 			<value>
-				/static/** = none
+				/static/** = anon
 				/logout = logout
+				/doLogin = anon
 				/** = authc
 			</value>
 		</property>

@@ -1,5 +1,6 @@
 package com.scholar.mvc.security;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -40,7 +41,7 @@ public class AuthorizeAccount extends AuthorizingRealm {
         UsernamePasswordToken upToken = (UsernamePasswordToken)token;
         String username = upToken.getUsername();
         Account account = AdminUser.admin;
-        if (username.equals(account.getName())) {
+        if (StringUtils.isNotBlank(username) && username.equals(account.getName())) {
             SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(account, account.getPassword(), this.getClass().getSimpleName());
             LoginHelper.setLoginUser(account);
             return authenticationInfo;
